@@ -25,6 +25,7 @@ class GenerateCardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedOutside()
         
         //Configure passwordLengthStepper
         passwordLengthStepper.minimumValue = 1.0
@@ -87,7 +88,17 @@ class GenerateCardsViewController: UIViewController {
         }
     }
     
-    
-    
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTappedOutside() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+}
