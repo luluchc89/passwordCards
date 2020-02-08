@@ -34,7 +34,7 @@ class GenerateCardsViewController: UIViewController {
         
         //Configure numberOfCardsStepper
         numberOfCardsStepper.minimumValue = 1.0
-        numberOfCardsStepper.maximumValue = 10.0
+        numberOfCardsStepper.maximumValue = 20.0
         numberOfCardsStepper.stepValue = 1.0
         numberOfCardsStepper.value = 1.0
         
